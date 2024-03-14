@@ -26,7 +26,7 @@ $usernamelogged = $_SESSION["username"];
     <meta name="keywords" content="admin dashboard html template, admin dashboard template bootstrap 4, analytics dashboard templates, best admin template bootstrap 4, best bootstrap admin template, bootstrap 4 template admin, bootstrap admin template premium, bootstrap admin ui, bootstrap basic admin template, cool admin template, dark admin dashboard, dark admin template, dark dashboard template, dashboard template bootstrap 4, ecommerce dashboard template, html5 admin template, light bootstrap dashboard, sales dashboard template, simple dashboard bootstrap 4, template bootstrap 4 admin">
 
     <!-- FAVICON 
-		<link rel="shortcut icon" type="image/x-icon" href="../assets/images/brand/favicon.ico" />-->
+	<link rel="shortcut icon" type="image/x-icon" href="../assets/images/brand/favicon.ico" />-->
 
     <!-- Include Bootstrap CSS and JavaScript -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -151,6 +151,9 @@ $usernamelogged = $_SESSION["username"];
                                 <div class="card-body"> 
                                     <form method="post" action="">
                                         <?php
+                                        // Set the default timezone to Kuala Lumpur
+                                        date_default_timezone_set('Asia/Kuala_Lumpur');
+
                                         // Set the default date to today
                                         $currentDate = date("Y-m-d");
 
@@ -166,14 +169,16 @@ $usernamelogged = $_SESSION["username"];
 
                                     <div style="text-align: left;">
                                         <?php
-                                        if (isset($_POST["getNextDate"])) {
-                                            echo "<p>Tomorrow: " .  $nextDate . "</p>";
+                                        if (isset($_POST["showToday"])) {
+                                            echo "<p>Today: " . $currentDate . "</p>";
+                                        } elseif (isset($_POST["getNextDate"])) {
+                                            echo "<p>Tomorrow: " . $nextDate . "</p>";
                                         } else {
+                                            // Display today's date by default
                                             echo "<p>Today: " . $currentDate . "</p>";
                                         }
                                         ?>
                                     </div>
-
                                     <br>
                                     <div class="table-responsive">
                                         <table id="data-table1" class="table table-striped table-bordered text-nowrap w-100">

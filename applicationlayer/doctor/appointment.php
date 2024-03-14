@@ -153,15 +153,37 @@
                                             }
                                         }
                                     </script>
-                                        
-									<div class="card-body">
+                                    <div class="card-body">
                                         <form method="post" action="">
-                                            <input type="hidden" name="currentDate" value="<?php echo date("Y-m-d"); ?>">
-                                            <div style="text-align: right;">
-                                                <button type="submit" name="showToday" class="btn btn-primary">Today</button>
-                                                <button type="submit" name="getNextDate" class="btn btn-primary">Tomorrow</button>
-                                            </div>
-                                        </form>
+                                        <?php
+                                        // Set the default timezone to Kuala Lumpur
+                                        date_default_timezone_set('Asia/Kuala_Lumpur');
+
+                                        // Set the default date to today
+                                        $currentDate = date("Y-m-d");
+
+                                        // Calculate the next date by adding 1 day
+                                        $nextDate = date('Y-m-d', strtotime($currentDate . ' +1 day'));
+                                        ?>
+                                        <input type="hidden" name="currentDate" value="<?php echo $currentDate; ?>">
+                                        <div style="text-align: right;">
+                                            <button type="submit" name="showToday" class="btn btn-primary">Today</button>
+                                            <button type="submit" name="getNextDate" class="btn btn-primary">Tomorrow</button>
+                                        </div>
+                                    </form>
+
+                                    <div style="text-align: left;">
+                                        <?php
+                                        if (isset($_POST["showToday"])) {
+                                            echo "<p>Today: " . $currentDate . "</p>";
+                                        } elseif (isset($_POST["getNextDate"])) {
+                                            echo "<p>Tomorrow: " . $nextDate . "</p>";
+                                        } else {
+                                            // Display today's date by default
+                                            echo "<p>Today: " . $currentDate . "</p>";
+                                        }
+                                        ?>
+                                    </div>
                                         <br>
 										<div class="table-responsive">
 											<table id="data-table1" class="table table-striped table-bordered text-nowrap w-100">
