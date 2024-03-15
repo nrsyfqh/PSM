@@ -30,6 +30,9 @@
 		<!-- FAVICON 
 		<link rel="shortcut icon" type="image/x-icon" href="../assets/images/brand/favicon.ico" />-->
 
+		<!-- FAVICON -->
+		<link rel="icon" type="image/x-icon" href="../assets/logo.png" />
+
 		<!-- TITLE -->
 		<title>Dental Clinic Appointment</title>
 

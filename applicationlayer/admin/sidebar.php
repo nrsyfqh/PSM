@@ -28,6 +28,8 @@
 		<!-- TITLE -->
 		<title>Dental Clinic Appointment</title>
 
+		
+
 		<!-- BOOTSTRAP CSS -->
 		<link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -53,6 +55,8 @@
 
 		<!-- COLOR SKIN CSS -->
 		<link id="theme" rel="stylesheet" type="text/css" media="all" href="../assets/colors/color1.css" />
+
+
 
 	</head>
 

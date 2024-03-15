@@ -10,6 +10,8 @@
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap'>
     <link rel="stylesheet" href="loginStyle.css">
+    <!-- FAVICON -->
+	<link rel="icon" type="image/x-icon" href="logo.png" />
 </head>
 
     <body>
