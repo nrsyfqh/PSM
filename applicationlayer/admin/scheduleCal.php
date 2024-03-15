@@ -25,7 +25,7 @@
 <meta name="keywords" content="admin dashboard html template, admin dashboard template bootstrap 4, analytics dashboard templates, best admin template bootstrap 4, best bootstrap admin template, bootstrap 4 template admin, bootstrap admin template premium, bootstrap admin ui, bootstrap basic admin template, cool admin template, dark admin dashboard, dark admin template, dark dashboard template, dashboard template bootstrap 4, ecommerce dashboard template, html5 admin template, light bootstrap dashboard, sales dashboard template, simple dashboard bootstrap 4, template bootstrap 4 admin">
 
 <!-- FAVICON -->
-<link rel="shortcut icon" type="image/x-icon" href="../assets/images/brand/favicon.ico" />
+<!-- <link rel="shortcut icon" type="image/x-icon" href="../assets/images/brand/favicon.ico" /> -->
 
 <!-- TITLE -->
 <title>Dental Clinic Appointment</title>
@@ -494,6 +494,42 @@
 						$(document).ready(function() {
 						$('#calendar').fullCalendar('addEventSource', events);
 						});
+						</script>
+
+						<script>
+							// Add an event listener to the Edit button
+							document.getElementById('edit').addEventListener('click', function() {
+								// Retrieve values from the modal
+								var doctor = document.getElementById('title').innerText; // Trim any leading/trailing whitespace
+   								console.log("Doctor Name:", doctor);
+
+								// Populate the form fields with retrieved values
+   								var doctorSelect = document.getElementById('doctor');
+								var optionFound = false;
+								for (var i = 0; i < doctorSelect.options.length; i++) {
+									if (doctorSelect.options[i].text.trim() === doctor) {
+										doctorSelect.selectedIndex = i; // Set the selected index to match the doctor's name
+										optionFound = true;
+										break;
+									}
+								}
+
+								if (!optionFound) {
+									console.error("Doctor option not found:", doctorName);
+								}
+								
+								var scheduleDate = document.getElementById('scheduleDate').innerText;
+								var startTime = document.getElementById('startTime').innerText;
+								var endTime = document.getElementById('endTime').innerText;
+
+								// Populate the form fields with retrieved value
+								document.getElementById('date').value = scheduleDate; // Assuming scheduleDate is the value needed for date input
+								document.getElementById('tp3').value = startTime; // Assuming startTime is the value needed for start time input
+								document.getElementById('tp4').value = endTime; // Assuming endTime is the value needed for end time input
+
+								// Open the modal or perform any other necessary actions
+								$('#event-details-modal').modal('hide'); // Close the modal after populating the form
+							});
 						</script>
 					
 			
