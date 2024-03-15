@@ -524,12 +524,20 @@
 
 								// Populate the form fields with retrieved value
 								document.getElementById('date').value = scheduleDate; // Assuming scheduleDate is the value needed for date input
+								document.getElementById('dayDisplay').value = getDayOfWeek(scheduleDate);
 								document.getElementById('tp3').value = startTime; // Assuming startTime is the value needed for start time input
 								document.getElementById('tp4').value = endTime; // Assuming endTime is the value needed for end time input
 
 								// Open the modal or perform any other necessary actions
 								$('#event-details-modal').modal('hide'); // Close the modal after populating the form
 							});
+
+							function getDayOfWeek(dateString) {
+								var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+								var date = new Date(dateString);
+								var dayIndex = date.getDay();
+								return daysOfWeek[dayIndex];
+							}
 						</script>
 					
 			
