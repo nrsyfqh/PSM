@@ -102,7 +102,7 @@
                              <div>
 								<h1 class="page-title">Schedule Doctor</h1>	
 							</div>
-							<div class="ml-auto pageheader-btn">
+							<!-- <div class="ml-auto pageheader-btn">
 								
 								<a type="button" data-toggle="modal" data-target="#myModal" class="btn btn-secondary btn-icon text-white">
 									<span>
@@ -110,7 +110,7 @@
 									</span> Add Schedule
 								</a>
                                 
-							</div>
+							</div> -->
 						</div>
 						<!-- PAGE-HEADER END -->
 
